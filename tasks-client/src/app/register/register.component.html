@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+    <h1>Register</h1>
+    <mat-form-field>
+        <mat-label>שם משתמש</mat-label>
+        <input matInput required name="username" [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>סיסמא</mat-label>
+        <input matInput required type="password" name="password" [(ngModel)]="password">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>הזן שוב סיסמא</mat-label>
+        <input matInput required type="password" name="password" [(ngModel)]="passwordAgain">
+        @if (!passwordsMatch()) {
+            <mat-error>סיסמאות לא תואמות</mat-error>
+        }
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="sending()">Register</button>
+    <button mat-button routerLink="/login">Already have an account? Login</button>
+</form>

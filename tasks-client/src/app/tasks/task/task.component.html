@@ -1,0 +1,11 @@
+<mat-card><mat-form-field>
+    <mat-label>title</mat-label>
+    <input matInput [(ngModel)]="task.title" />
+</mat-form-field>
+<mat-form-field>
+    <mat-label>description</mat-label>
+    <textarea matInput [(ngModel)]="task.description"></textarea>
+</mat-form-field>
+<button type="button" mat-button (click)="onSave()">שמור</button>
+<button type="button" mat-button (click)="onDelete()">מחק</button>
+</mat-card>

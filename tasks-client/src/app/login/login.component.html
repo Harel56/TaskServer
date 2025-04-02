@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()">
+    <h1>Login</h1>
+    <mat-form-field>
+        <mat-label>שם משתמש</mat-label>
+        <input matInput required name="username" [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>סיסמא</mat-label>
+        <input matInput required type="password" name="password" [(ngModel)]="password">
+    </mat-form-field>
+    <button mat-raised-button type="submit">Login</button>
+    <button mat-button routerLink="/register">Don't have an account? Register</button>
+</form>

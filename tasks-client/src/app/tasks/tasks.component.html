@@ -1,0 +1,12 @@
+@if (tasks.isLoading()) {
+    <mat-spinner />
+}
+@if (tasks.error()) {
+    שגיאה...
+}
+@if (tasks.hasValue()) {
+@for (task of tasks.value(); track task.id) {
+    <app-task [task]="task" (save)="onSave($event)" (delete)="onDelete($event)" />
+}
+<button mat-button (click)="addNewTask()">Add New Task</button>
+}
